@@ -1,0 +1,29 @@
+{
+  "name": "workbenchinator",
+  "version": "1.0.0",
+  "description": "A connectwise ticket integrator for the IT team to use at the workbench",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "build": "rimraf ./build && npm run compile:less && npm run compile:js && npm run compile:jade",
+    "compile:jade": "jade ./src/index.jade --out ./build",
+    "compile:js": "webpack --progress --colors",
+    "compile:less": "./scripts/compile-less.sh",
+    "watch": "rimraf ./build && npm run compile:less && parallelshell \"npm run compile:js -- --watch\" \"npm run compile:jade -- -P --watch\""
+  },
+  "author": "Christian Michael Paul Bankester <cbankester@immense.net>",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-loader": "^5.3.1",
+    "css-loader": "^0.15.1",
+    "jade": "^1.11.0",
+    "less": "^2.5.1",
+    "less-loader": "^2.2.0",
+    "less-plugin-clean-css": "^1.5.0",
+    "parallelshell": "^1.2.0",
+    "rimraf": "^2.4.1",
+    "style-loader": "^0.12.3",
+    "webpack": "^1.10.1"
+  }
+}

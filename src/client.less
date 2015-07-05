@@ -1,0 +1,60 @@
+@import "bootstrap/less/bootstrap";
+@import "font-awesome/less/font-awesome";
+@import (inline) "sweetalert/dist/sweetalert.css";
+
+@border-radius-base: 0px;
+@border-radius-small: 0px;
+@border-radius-large: 0px;
+
+.ticket {
+  .make-row();
+  padding-bottom: @padding-base-vertical;
+  border: 1px solid black;
+  .header {
+    .make-row();
+    margin: 0px;
+    margin-top: @padding-base-vertical;
+    h2 {
+      .make-sm-column(8);
+      padding-left: 0px;
+      margin-top: @padding-base-vertical;
+      font-size: 17px;
+    }
+    .submit-ticket {
+      .make-sm-column(4);
+      padding-right: 0px;
+      button {
+        &:extend(.btn, .btn-primary, .pull-right);
+      }
+    }
+  }
+  .worklog {
+    .make-row();
+    margin: 0px;
+    margin-top: @padding-base-vertical;
+    padding-top: @padding-base-vertical;
+    padding-bottom: @padding-base-vertical;
+    background-color: #CCCCCC;
+    border: 1px solid black;
+    .description {
+      .make-sm-column(10);
+    }
+    .time {
+      .make-sm-column(1);
+      span {
+        padding-top: @padding-base-vertical;
+        &:extend(.pull-right);
+      }
+    }
+    .timer {
+      .make-sm-column(1);
+      button {
+        &:extend(.btn, .btn-lg, .btn-danger, .pull-right);
+      }
+    }
+  }
+}
+
+footer {
+  margin-top: 15px;
+}

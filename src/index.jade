@@ -1,0 +1,39 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    title Workbenchinator
+    script(type='text/javascript', src="client.js")
+    link(type="text/css", href="client.css", rel="stylesheet")
+    script(type="text/javascript").
+      $(function(){
+        window.view = new WorkbenchinatorViewModel();
+      });
+
+  body
+    header: .container
+      h1 Workbenchinator
+    main: .container(data-bind="foreach: table.pagedRows")
+      .ticket: .col-sm-12
+        .header
+          h2(data-bind="html: client_name() + ' &mdash; ' + ticket_name() + ' &mdash; Ticket #' + ticket_number()")
+          .submit-ticket: button(type="button", data-bind="click: submitTicket") Submit Ticket
+        // ko foreach: worklogs
+        .worklog(data-bind="css: {active: active}")
+          .description
+            // ko if: active
+            textarea.form-control(placeholder="Description", data-bind="value: description", rows="1")
+            // /ko
+            // ko ifnot: active
+            input.form-control(type="text", placeholder="Description", data-bind="value: description")
+            // /ko
+          .time: span(data-bind="text: time_spent")
+          // ko if: active
+          .timer
+            button(type="button", data-bind="click: toggleTimer") Stop
+          // /ko
+        // /ko
+        
+    footer: .container
+      |Yolp.
+      

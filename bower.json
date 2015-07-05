@@ -1,0 +1,27 @@
+{
+  "name": "workbenchinator",
+  "main": "index.js",
+  "version": "1.0.0",
+  "authors": [
+    "Christian Michael Paul Bankester <cbankester@immense.net>"
+  ],
+  "description": "A connectwise ticket integrator for the IT team to use at the workbench",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "font-awesome": "~4.3.0",
+    "immybox": "~0.4.2",
+    "knockout": "~3.3.0",
+    "knockout-datatable": "~0.6.3",
+    "fetch": "~0.9.0",
+    "moment": "~2.10.3",
+    "sweetalert": "~1.0.1"
+  }
+}
